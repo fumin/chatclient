@@ -2,4 +2,4 @@ This is an iphone client for the erlang irc server
 
 1. The low level protocol is based on draft-ietf-hybi-thewebsocketprotocol-00. A packet is denoted by \x00${CONTENT}\xff, where ${CONTENT} is a utf-8 encoded string. 
 2. High level protocol is action_code<1 byte>, len(room)<4 bytes>, room, len(username)<4 bytes>, username, message
-3. chatserver.erl is the erlang server. chatclient.py is the python client. Other files belong to the iphone client.
+3. chatserver.erl is the erlang server. chatclient.py is the python client. The rest belong to the iphone client.
