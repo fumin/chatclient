@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		049BACDC1549C87700F10C70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049BACDB1549C87700F10C70 /* UIKit.framework */; };
+		049BACDE1549C87700F10C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049BACDD1549C87700F10C70 /* Foundation.framework */; };
+		049BACE01549C87700F10C70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049BACDF1549C87700F10C70 /* CoreGraphics.framework */; };
+		049BACE61549C87700F10C70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 049BACE41549C87700F10C70 /* InfoPlist.strings */; };
+		049BACE81549C87700F10C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 049BACE71549C87700F10C70 /* main.m */; };
+		049BACEC1549C87700F10C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 049BACEB1549C87700F10C70 /* AppDelegate.m */; };
+		049BACEF1549C87700F10C70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049BACEE1549C87700F10C70 /* ViewController.m */; };
+		049BACF21549C87700F10C70 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049BACF01549C87700F10C70 /* ViewController.xib */; };
+		04ECEC311549CCBE00C5AB95 /* NSStream+QNetworkAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ECEC301549CCBE00C5AB95 /* NSStream+QNetworkAdditions.m */; };
+		04ECEC351549CD4400C5AB95 /* OnlineSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ECEC341549CD4400C5AB95 /* OnlineSession.m */; };
+		04ECEC3A1549CF2600C5AB95 /* chatclient.py in Resources */ = {isa = PBXBuildFile; fileRef = 04ECEC361549CF2600C5AB95 /* chatclient.py */; };
+		04ECEC3B1549CF2600C5AB95 /* chatserver.erl in Resources */ = {isa = PBXBuildFile; fileRef = 04ECEC371549CF2600C5AB95 /* chatserver.erl */; };
+		04ECEC3C1549CF2600C5AB95 /* File.hrl in Resources */ = {isa = PBXBuildFile; fileRef = 04ECEC381549CF2600C5AB95 /* File.hrl */; };
+		04ECEC3D1549CF2600C5AB95 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 04ECEC391549CF2600C5AB95 /* README */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		049BACD71549C87700F10C70 /* chatclient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatclient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		049BACDB1549C87700F10C70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		049BACDD1549C87700F10C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		049BACDF1549C87700F10C70 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		049BACE31549C87700F10C70 /* chatclient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chatclient-Info.plist"; sourceTree = "<group>"; };
+		049BACE51549C87700F10C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		049BACE71549C87700F10C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		049BACE91549C87700F10C70 /* chatclient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chatclient-Prefix.pch"; sourceTree = "<group>"; };
+		049BACEA1549C87700F10C70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		049BACEB1549C87700F10C70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		049BACED1549C87700F10C70 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		049BACEE1549C87700F10C70 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		049BACF11549C87700F10C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		04ECEC2F1549CCBE00C5AB95 /* NSStream+QNetworkAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+QNetworkAdditions.h"; sourceTree = "<group>"; };
+		04ECEC301549CCBE00C5AB95 /* NSStream+QNetworkAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+QNetworkAdditions.m"; sourceTree = "<group>"; };
+		04ECEC331549CD4400C5AB95 /* OnlineSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineSession.h; sourceTree = "<group>"; };
+		04ECEC341549CD4400C5AB95 /* OnlineSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineSession.m; sourceTree = "<group>"; };
+		04ECEC361549CF2600C5AB95 /* chatclient.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = chatclient.py; sourceTree = "<group>"; };
+		04ECEC371549CF2600C5AB95 /* chatserver.erl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chatserver.erl; sourceTree = "<group>"; };
+		04ECEC381549CF2600C5AB95 /* File.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.hrl; sourceTree = "<group>"; };
+		04ECEC391549CF2600C5AB95 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		049BACD41549C87700F10C70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049BACDC1549C87700F10C70 /* UIKit.framework in Frameworks */,
+				049BACDE1549C87700F10C70 /* Foundation.framework in Frameworks */,
+				049BACE01549C87700F10C70 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		049BACCC1549C87700F10C70 = {
+			isa = PBXGroup;
+			children = (
+				04ECEC361549CF2600C5AB95 /* chatclient.py */,
+				04ECEC371549CF2600C5AB95 /* chatserver.erl */,
+				04ECEC381549CF2600C5AB95 /* File.hrl */,
+				04ECEC391549CF2600C5AB95 /* README */,
+				049BACE11549C87700F10C70 /* chatclient */,
+				049BACDA1549C87700F10C70 /* Frameworks */,
+				049BACD81549C87700F10C70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		049BACD81549C87700F10C70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				049BACD71549C87700F10C70 /* chatclient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		049BACDA1549C87700F10C70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049BACDB1549C87700F10C70 /* UIKit.framework */,
+				049BACDD1549C87700F10C70 /* Foundation.framework */,
+				049BACDF1549C87700F10C70 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		049BACE11549C87700F10C70 /* chatclient */ = {
+			isa = PBXGroup;
+			children = (
+				049BACEA1549C87700F10C70 /* AppDelegate.h */,
+				049BACEB1549C87700F10C70 /* AppDelegate.m */,
+				049BACED1549C87700F10C70 /* ViewController.h */,
+				049BACEE1549C87700F10C70 /* ViewController.m */,
+				049BACF01549C87700F10C70 /* ViewController.xib */,
+				049BACE21549C87700F10C70 /* Supporting Files */,
+				04ECEC2F1549CCBE00C5AB95 /* NSStream+QNetworkAdditions.h */,
+				04ECEC301549CCBE00C5AB95 /* NSStream+QNetworkAdditions.m */,
+				04ECEC331549CD4400C5AB95 /* OnlineSession.h */,
+				04ECEC341549CD4400C5AB95 /* OnlineSession.m */,
+			);
+			path = chatclient;
+			sourceTree = "<group>";
+		};
+		049BACE21549C87700F10C70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				049BACE31549C87700F10C70 /* chatclient-Info.plist */,
+				049BACE41549C87700F10C70 /* InfoPlist.strings */,
+				049BACE71549C87700F10C70 /* main.m */,
+				049BACE91549C87700F10C70 /* chatclient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		049BACD61549C87700F10C70 /* chatclient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 049BACF51549C87700F10C70 /* Build configuration list for PBXNativeTarget "chatclient" */;
+			buildPhases = (
+				049BACD31549C87700F10C70 /* Sources */,
+				049BACD41549C87700F10C70 /* Frameworks */,
+				049BACD51549C87700F10C70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chatclient;
+			productName = chatclient;
+			productReference = 049BACD71549C87700F10C70 /* chatclient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		049BACCE1549C87700F10C70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 049BACD11549C87700F10C70 /* Build configuration list for PBXProject "chatclient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 049BACCC1549C87700F10C70;
+			productRefGroup = 049BACD81549C87700F10C70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				049BACD61549C87700F10C70 /* chatclient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		049BACD51549C87700F10C70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049BACE61549C87700F10C70 /* InfoPlist.strings in Resources */,
+				049BACF21549C87700F10C70 /* ViewController.xib in Resources */,
+				04ECEC3A1549CF2600C5AB95 /* chatclient.py in Resources */,
+				04ECEC3B1549CF2600C5AB95 /* chatserver.erl in Resources */,
+				04ECEC3C1549CF2600C5AB95 /* File.hrl in Resources */,
+				04ECEC3D1549CF2600C5AB95 /* README in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		049BACD31549C87700F10C70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049BACE81549C87700F10C70 /* main.m in Sources */,
+				049BACEC1549C87700F10C70 /* AppDelegate.m in Sources */,
+				049BACEF1549C87700F10C70 /* ViewController.m in Sources */,
+				04ECEC311549CCBE00C5AB95 /* NSStream+QNetworkAdditions.m in Sources */,
+				04ECEC351549CD4400C5AB95 /* OnlineSession.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		049BACE41549C87700F10C70 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				049BACE51549C87700F10C70 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		049BACF01549C87700F10C70 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				049BACF11549C87700F10C70 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		049BACF31549C87700F10C70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		049BACF41549C87700F10C70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		049BACF61549C87700F10C70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chatclient/chatclient-Prefix.pch";
+				INFOPLIST_FILE = "chatclient/chatclient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		049BACF71549C87700F10C70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chatclient/chatclient-Prefix.pch";
+				INFOPLIST_FILE = "chatclient/chatclient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		049BACD11549C87700F10C70 /* Build configuration list for PBXProject "chatclient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				049BACF31549C87700F10C70 /* Debug */,
+				049BACF41549C87700F10C70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		049BACF51549C87700F10C70 /* Build configuration list for PBXNativeTarget "chatclient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				049BACF61549C87700F10C70 /* Debug */,
+				049BACF71549C87700F10C70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 049BACCE1549C87700F10C70 /* Project object */;
+}
