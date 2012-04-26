@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSMutableArray* _messages;
 -(NSString*)protocol_len:(NSString*)instr;
 -(void)showErrorAlertWithTitle:(NSString*)alertTitle message:(NSString*)message;
-
+-(void)cleanUpSession;
 @end
 
 @implementation ViewController
@@ -115,28 +115,37 @@
 -(void)onlineSession:(OnlineSession *)session encounteredReadError:(NSError *)error{
     [self.view bringSubviewToFront:joinView];
     [self showErrorAlertWithTitle:NSLocalizedString(@"Error Reading", @"Error Reading") message:NSLocalizedString(@"Could not read sent packet", @"Could not read sent packet")];
-    self._onlineSession = nil;
-    [self._messages removeAllObjects];
+    [self cleanUpSession];
 }
 
 -(void)onlineSession:(OnlineSession *)session encounteredWriteError:(NSError *)error{
     [self.view bringSubviewToFront:joinView];
     [self showErrorAlertWithTitle:NSLocalizedString(@"Error Writing", @"Error Writing") message:NSLocalizedString(@"Could not send packet", @"Could not send packet")];
-    self._onlineSession = nil;
-    [self._messages removeAllObjects];
+    [self cleanUpSession];
 }
 
 -(void)onlineSessionDisconnected:(OnlineSession *)session{
-    [self.view bringSubviewToFront:joinView];
     [self showErrorAlertWithTitle:NSLocalizedString(@"Server Disconnected", @"Server Disconnected") message:NSLocalizedString(@"Server disconnected or otherwise could not be reached", @"Server disconnected or otherwise could not be reached")];
-    self._onlineSession = nil;
-    [self._messages removeAllObjects];
+    [self cleanUpSession];
 }
 
 - (IBAction)sendMessage:(id)sender {
     [self._onlineSession sendData:[[NSString stringWithFormat:@"\x03%@%@%@%@", [self protocol_len:@""], [self protocol_len:self._room], self._room, inputMessageField.text] dataUsingEncoding:NSUTF8StringEncoding]];
     inputMessageField.text = @"";
     [self.inputMessageField resignFirstResponder];
+}
+
+- (IBAction)leaveRoom:(id)sender {
+    [self cleanUpSession];
+}
+
+-(void)cleanUpSession{
+    self._onlineSession = nil;
+    [self._messages removeAllObjects];
+    [self.tView reloadData];
+    inputNameField.text = self._username;
+    inputRoomField.text = self._room;
+    [self.view bringSubviewToFront:joinView];
 }
 
 @end

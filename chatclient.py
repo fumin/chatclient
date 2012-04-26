@@ -21,49 +21,50 @@ class ChatClient:
             data += buf
             m = re.match("\x00(%s has entered this room.)\xff" % (self.name), data)
             if m is not None:
-        self.room = room
-        self.socket = s
-        self.t = RecvThread(s)
-        self.t.start()
-        print m.group(1)
-        return
+                self.room = room
+                self.socket = s
+                self.t = RecvThread(s)
+                self.t.start()
+                print m.group(1)
+                return
             m = re.match(r"\x00(.*)\xff.*", data)
             if m is not None:
                 print m.group(1)
                 return
-                    def leave_room(self):
-                        if self.t is None:
-                            print "You're not in any room."
-                            return
-                        if self.t.isAlive():
-                            self.socket.shutdown(socket.SHUT_WR)
-                            self.socket = None
-                            self.room = None
-                            self.t = None
-                        else:
-                            self.t = None
-                    def speak(self, msg):
-                        if self.t is None:
-                            print "You're not in any room."
-                            return
-    if self.t.isAlive():
-        self.socket.sendall('\x00\x03' + self.protocol_len("") + self.protocol_len(self.name) + self.name + msg + '\xff')
-    #self.socket.sendall('\x00\x03' + self.protocol_len(self.room) + self.room + self.protocol_len(self.name) + self.name + msg + '\xff')
-    else:
-        self.t = None
-            def protocol_len(self, instr):
-                ls = str(len(instr))
-                l = len(ls)
-                if l == 4:
-                    return ls
-                elif l == 3:
-                    return "0" + ls
-                elif l == 2:
-                    return "00" + ls
-                elif l == 1:
-                    return "000" + ls
-                else:
-                    raise ProtocolError("Cannot pack length for string \"%s\"" % (instr))
+    def leave_room(self):
+        if self.t is None:
+            print "You're not in any room."
+            return
+        if self.t.isAlive():
+            self.socket.shutdown(socket.SHUT_WR)
+            self.socket = None
+            self.room = None
+            self.t = None
+        else:
+            self.t = None
+    def speak(self, msg):
+        if self.t is None:
+            print "You're not in any room."
+            return
+        if self.t.isAlive():
+            self.socket.sendall('\x00\x03' + self.protocol_len("") + self.protocol_len(self.name) + self.name + msg + '\xff')
+            #self.socket.sendall('\x00\x03' + self.protocol_len(self.room) + self.room + self.protocol_len(self.name) + self.name + msg + '\xff')
+        else:
+            self.t = None
+            
+    def protocol_len(self, instr):
+        ls = str(len(instr))
+        l = len(ls)
+        if l == 4:
+            return ls
+        elif l == 3:
+            return "0" + ls
+        elif l == 2:
+            return "00" + ls
+        elif l == 1:
+            return "000" + ls
+        else:
+            raise ProtocolError("Cannot pack length for string \"%s\"" % (instr))
 
 class RecvThread(threading.Thread):
     def __init__(self, socket):

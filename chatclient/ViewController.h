@@ -18,5 +18,6 @@
 - (IBAction)sendMessage:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tView;
 @property (strong, nonatomic) IBOutlet UIView *chatView;
+- (IBAction)leaveRoom:(id)sender;
 
 @end
