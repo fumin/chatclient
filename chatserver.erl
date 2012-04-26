@@ -7,8 +7,8 @@ start(Port) -> register(?MODULE, spawn(?MODULE, init, [Port])).
 
 init(Port) ->
   LogFileName = atom_to_list(?MODULE) ++ ".log",
-  disk_log:open([{name, chatserver_log},
-                 {format, external},
+  disk_log:open([{name, chatserver_log}, 
+                 {format, external}, 
                  {file, LogFileName}]),
   Room2Chatter = ets:new(room2Chatter, [public, named_table]),
   Chatter2Room = ets:new(chatter2Room, [public, named_table]),
@@ -16,7 +16,7 @@ init(Port) ->
                                         {reuseaddr, true},
                                         {active, once}]),
   spawn(?MODULE, par_connect, [LSocket, Room2Chatter, Chatter2Room]),
- init_loop().
+  init_loop().
 
 rotate_log() -> ?MODULE ! log_rotate.
 
@@ -24,7 +24,7 @@ init_loop() ->
   receive
     log_rotate ->
       {{Year,Month,Day},{Hour,Min,Sec}} = erlang:localtime(),
-      Ds = io_lib:format("~4.10.0B~2.10.0B~2.10.0B_~2.10.0B~2.10.0B~2.10.0B",
+      Ds = io_lib:format("~4.10.0B~2.10.0B~2.10.0B_~2.10.0B~2.10.0B~2.10.0B", 
                          [Year, Month, Day, Hour, Min, Sec]),
       LogFileName = atom_to_list(?MODULE) ++ Ds ++ ".log",
       disk_log:breopen(chatserver_log, LogFileName, <<>>),
@@ -34,21 +34,21 @@ init_loop() ->
 par_connect(LSocket, Room2Chatter, Chatter2Room) ->
   {ok, Socket} = gen_tcp:accept(LSocket),
   spawn(?MODULE, par_connect, [LSocket, Room2Chatter, Chatter2Room]),
-  loop(zero, #chatserver_state{sock=Socket,
-                               rc=Room2Chatter,
-                               cr=Chatter2Room,
+  loop(zero, #chatserver_state{sock=Socket, 
+                               rc=Room2Chatter, 
+                               cr=Chatter2Room, 
                                name=void}).
 
 loop(Buff, State) ->
   receive
-    {tcp, Socket, Data} ->
+    {tcp, Socket, Data} -> 
       Socket = State#chatserver_state.sock,
       inet:setopts(Socket, [{active, once}]),
       handle_data(Buff, Data, State);
-    {tcp_closed, Socket} ->
+    {tcp_closed, Socket} -> 
       Socket = State#chatserver_state.sock,
       process_input(leave_room, State);
-    {send, Data} ->
+    {send, Data} -> 
       gen_tcp:send(State#chatserver_state.sock, [0, Data, 255]),
       loop(Buff, State)
   end.
@@ -82,15 +82,15 @@ parse_input(State, Bin) ->
     3 -> process_input(speak, Msg, State1)
   end.
 
-process_input(enter_room, Room, #chatserver_state{sock=Socket,
+process_input(enter_room, Room, #chatserver_state{sock=Socket, 
                                                   rc=Room2Chatter,
                                                   cr=Chatter2Room,
                                                   name=Name} = State) ->
-  NotInAnyRoom = case {ets:lookup(Chatter2Room, Name),
+  NotInAnyRoom = case {ets:lookup(Chatter2Room, Name), 
                        ets:lookup(Room2Chatter, Room)} of
                    {[], []} -> Chatters = [], true;
                    {[], [{Room, Chatters}]} -> true;
-                   {[{Name, AnotherRoom}], _} ->
+                   {[{Name, AnotherRoom}], _} -> 
                      Chatters = [],
                      gen_tcp:send(Socket,["You're already in room", AnotherRoom]),
                      false
@@ -109,7 +109,7 @@ process_input(speak, Msg, #chatserver_state{sock=Socket,
                                             name=Name} = State) ->
   case ets:lookup(Chatter2Room, Name) of
     [] -> gen_tcp:send(Socket, ["You're not in any room."]);
-    [{Name, Room}] ->
+    [{Name, Room}] -> 
       {{Year,Month,Day},{Hour,Min,Sec}} = erlang:localtime(),
       Ds = io_lib:format("~4.10.0B-~2.10.0B-~2.10.0B ~2.10.0B:~2.10.0B:~2.10.0B",
                          [Year, Month, Day, Hour, Min, Sec]),
