@@ -10,14 +10,14 @@
 #import "OnlineSession.h"
 
 @interface ViewController : UIViewController <OnlineSessionDelegate, UITableViewDelegate, UITableViewDataSource>
-@property (strong, nonatomic) IBOutlet UIView *joinView;
-@property (strong, nonatomic) IBOutlet UITextField *inputNameField;
-@property (strong, nonatomic) IBOutlet UITextField *inputRoomField;
+@property (weak, nonatomic) IBOutlet UIView *joinView;
+@property (weak, nonatomic) IBOutlet UITextField *inputNameField;
+@property (weak, nonatomic) IBOutlet UITextField *inputRoomField;
 - (IBAction)joinChat:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextField *inputMessageField;
+@property (weak, nonatomic) IBOutlet UITextField *inputMessageField;
 - (IBAction)sendMessage:(id)sender;
-@property (strong, nonatomic) IBOutlet UITableView *tView;
-@property (strong, nonatomic) IBOutlet UIView *chatView;
+@property (weak, nonatomic) IBOutlet UITableView *tView;
+@property (weak, nonatomic) IBOutlet UIView *chatView;
 - (IBAction)leaveRoom:(id)sender;
 
 @end
